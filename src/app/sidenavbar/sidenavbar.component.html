@@ -1,0 +1,36 @@
+<!-- sidenavbar.component.html -->
+<div class="sidenav" [ngClass]="{'collapsed': isSidebarOpen}">
+    <div class="logo">
+      <img src="assets/asprcmlogo.svg" alt="Logo"/>
+      <button class="toggle-btn" (click)="toggleSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <ng-container *ngIf="!isSidebarOpen">
+            <path d="M15 18l-6-6 6-6"/>
+          </ng-container>
+          <ng-container *ngIf="isSidebarOpen">
+            <path d="M9 18l6-6-6-6"/>
+          </ng-container>
+        </svg>
+      </button>
+    </div>
+    
+    <ul class="menu">
+      <li><a href="#"><img src="assets/home.svg" alt="Home"/><span>Home</span></a></li>
+      
+      <div class="section-title">RECRUITMENT</div>
+      <li><a [routerLink]="['dashboard']"routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img src="assets/check-square.svg" alt="Overview"/><span>Overview</span></a></li>
+      <li><a [routerLink]="['requests']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img src="assets/file-text.svg" alt="My Request"/><span>My Request</span></a></li>
+      <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img src="assets/paperclip.svg" alt="Jobs"/><span>Jobs</span></a></li>
+      
+      <div class="section-title">ORGANIZATION</div>
+      <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img src="assets/users.svg" alt="Employee"/><span>Employee</span></a></li>
+      <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img src="assets/slack.svg" alt="Structure"/><span>Structure</span></a></li>
+      <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img src="assets/airplay.svg" alt="Reports"/><span>Reports</span></a></li>
+      <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}"><img src="assets/settings.svg" alt="Settings"/><span>Settings</span></a></li>
+    </ul>
+    
+    <div class="help">
+      <p>Need Help?</p>
+      <a href="#">Open our help center</a>
+    </div>
+  </div>

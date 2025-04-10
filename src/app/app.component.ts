@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { CommonService } from './common.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HRMS';
+  isSidebarOpen:any
+  isNewRequestClicked:any
+  constructor(private commonService: CommonService){
+    this.commonService.sidebarState$.subscribe(state => {
+      this.isSidebarOpen = state;
+    });
+
+
+    this.commonService.isNewRequestClicked$.subscribe(state => {
+      this.isNewRequestClicked = state;
+    });
+
+  }
+  
+  toggleSidebar() {
+    this.commonService.toggleSidebar()
+    console.log("Toggled")
+  }
+
+
+  openNewReqestForm(){
+    this.commonService.openNewRequestForm()
+  }
 }

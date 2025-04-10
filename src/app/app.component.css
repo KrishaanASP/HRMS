@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    height: 100vh;
+    transition: all 0.3s ease;
+    
+  }
+  
+  app-sidenavbar {
+    width: 240px;
+    transition: width 0.3s ease;
+  }
+  
+  app-dashboard {
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+    margin-left: 20px;
+  }
+  app-requests {
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+    margin-left: 250px;
+  }
+  /* When collapsed */
+  .container.collapsed app-sidenavbar {
+    width: 80px;
+  }
+  
+  .container.collapsed app-dashboard {
+    margin-left: 20px;
+  }
+
+  .container.collapsed app-requests {
+    margin-left: 20px;
+  }
+  

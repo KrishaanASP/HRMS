@@ -1,0 +1,142 @@
+<!-- <div class="container">
+    <button class="trigger-button" (click)="openPanel()">Open Request Form</button>
+</div> -->
+
+<div class="overlay" *ngIf="isNewRequestClicked" (click)="closePanel()"></div>
+
+<div class="side-panel" [class.active]="isNewRequestClicked">
+    <div class="panel-header">
+        <h2 class="panel-title">New Request</h2>
+        <button class="close-btn" (click)="closePanel()">×</button>
+    </div>
+
+    <p class="form-description">Forem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <form (submit)="onSubmit()">
+        <div class="form-group">
+            <div class="form-row">
+                <div class="form-column">
+                    <label class="form-label required" for="position">Position</label>
+                    <select class="form-control form-select" id="position" required>
+                        <option value="" selected disabled>Select Position</option>
+                        <option value="manager">Manager</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                    </select>
+                </div>
+                <div class="form-column strength-indicator">
+                    <label class="form-label">Current Strength:</label>
+                    <span>XXXXX</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label required" for="jobType">Job Type</label>
+            <select class="form-control form-select" id="jobType" required>
+                <option value="" selected disabled>Select Job Type</option>
+                <option value="fulltime">Full Time</option>
+                <option value="parttime">Part Time</option>
+                <option value="contract">Contract</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label required" for="positionType">Position Type</label>
+            <select class="form-control form-select" id="positionType" required>
+                <option value="" selected disabled>Select Position Type</option>
+                <option value="remote">Remote</option>
+                <option value="onsite">On-site</option>
+                <option value="hybrid">Hybrid</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label required" for="resourceCount">No. of Resource</label>
+            <input type="number" class="form-control" id="resourceCount" placeholder="Enter Total Openings" required>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label required" for="shift">Shift</label>
+            <select class="form-control form-select" id="shift" required>
+                <option value="" selected disabled>Select Shifts</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="night">Night</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <div class="form-column">
+                <label class="form-label required" for="priority">Priority</label>
+                <select class="form-control form-select" id="priority" required>
+                    <option value="" selected disabled>Select Priority</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+            </div>
+            <div class="form-column">
+                <label class="form-label" for="replacement">Replacement Of</label>
+                <select class="form-control form-select" id="replacement">
+                    <option value="" selected disabled>Select Replacements</option>
+                    <option value="john">John Doe</option>
+                    <option value="jane">Jane Smith</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label required" for="requestType">Request Type</label>
+            <select class="form-control form-select" id="requestType" required>
+                <option value="" selected disabled>Select Type</option>
+                <option value="new">New Position</option>
+                <option value="replacement">Replacement</option>
+                <option value="temporary">Temporary</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label" for="requestReason">Request Reason</label>
+            <textarea class="form-control form-textarea" id="requestReason" placeholder="Enter Reason"></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label required" for="jobDescription">Job Description</label>
+            <textarea class="form-control form-textarea" id="jobDescription" placeholder="Enter Job Description" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label required" for="experience">Experience</label>
+            <select class="form-control form-select" id="experience" required>
+                <option value="" selected disabled>Select Experience</option>
+                <option value="entry">Entry Level (0-2 years)</option>
+                <option value="mid">Mid Level (3-5 years)</option>
+                <option value="senior">Senior Level (5+ years)</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label" for="skills">Skills Required</label>
+            <select class="form-control form-select" id="skills">
+                <option value="" selected disabled>Select Skills</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="design">UI/UX Design</option>
+            </select>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-column">
+                <label class="form-label required" for="salaryFrom">Salary Range From</label>
+                <input type="text" class="form-control" id="salaryFrom" placeholder="Enter Min Salary" required>
+            </div>
+            <div class="form-column">
+                <label class="form-label required" for="salaryTo">Salary Range To</label>
+                <input type="text" class="form-control" id="salaryTo" placeholder="Enter Max Salary" required>
+            </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</div>

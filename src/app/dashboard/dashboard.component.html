@@ -1,0 +1,208 @@
+<div class="dashboard">
+    <div class="header">
+        <p>Recruitment &gt; Overview</p>
+        <div class="user-info">
+            <img src="assets/bell.svg" alt="User Icon" class="user-icon" (click)="toggleNotificationPopup()">
+            <img src="assets/Ellipse 1.svg" alt="Notification Icon" class="notification-icon">
+            <div class="notification-popup" *ngIf="isPopupVisible">
+                <p>No new notifications</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome-section">
+        <div class="welcome-message">
+            <h2>Hello! Kamal</h2>
+            <p>Forem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        
+        <div class="actions">
+            <button class="date-button"><img src="assets/calendar.svg"/>This Month</button>
+            <button class="new-request-button" (click)="openNewRequestForm()"><img src="assets/plus.svg"/>New Request</button>
+        </div>
+    </div>
+
+    <div class="insights">
+        <div class="insight-section">
+            <div class="insight-header">
+                <h3>Request Insights</h3>
+                <button class="view-all-button">View All</button>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-item">
+                    <p>Total Requests <img src="assets/Icon.svg"/></p>
+                    <h4>4</h4>
+                </div>
+                <div class="insight-item">
+                    <p>Filled <img src="assets/Icon.svg"/></p>
+                    <h4>2</h4>
+                </div>
+                <div class="insight-item">
+                    <p>In Progress <img src="assets/Icon.svg"/></p>
+                    <h4>1</h4>
+                </div>
+                <div class="insight-item">
+                    <p>Pending for approval <img src="assets/Icon.svg"/></p>
+                    <h4>1</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-section">
+            <div class="insight-header">
+                <h3>Opening Insights</h3>
+                <button class="view-all-button">View All</button>
+            </div>
+            <div class="insight-card">
+                <div class="insight-item">
+                    <p>Total Counts <img src="assets/Icon.svg"/></p>
+                    <h4>15</h4>
+                </div>
+                <div class="insight-item">
+                    <p>Filled <img src="assets/Icon.svg"/></p>
+                    <h4>10</h4>
+                </div>
+                <div class="insight-item">
+                    <p>In Progress <img src="assets/Icon.svg"/></p>
+                    <h4>3</h4>
+                </div>
+                <div class="insight-item">
+                    <p>Re-Initiated <img src="assets/Icon.svg"/></p>
+                    <h4>2</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="insights-1">
+        <div class="insight-section-1">
+            <div class="insight-header-1">
+                <h3>Recruitment Funnel</h3>
+                <button class="full-report-button">Full Report</button>
+            </div>
+            <!-- Funnel chart has to appear -->
+        </div>
+
+        <div class="recent-job-requests">
+            <div class="recent-job-requests-header">
+                <h3>Recent Job Requests</h3>
+                <button class="view-all-button">View All</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Total Openings</th>
+                    <th>Requested Date</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Marketing Specialist</td>
+                    <td>01</td>
+                    <td>2024-09-12</td>
+                    <td class="status status-in-progress">
+                        <span style="background-color: #F2F4F7; border-radius: 30%; width:max-content; height: max-content;">
+                            <span class="status-indicator"></span>
+                        <span class="status-in-progress-text status-label">In Progress</span>
+                        </span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>AR Callers</td>
+                    <td>10</td>
+                    <td>2024-09-12</td>
+                    <td class="status status-in-progress">
+                        <span style="background-color: #F2F4F7; border-radius: 30%; width: max-content; height: max-content;">
+                            <span class="status-indicator"></span>
+                            <span class="status-in-progress-text status-label">In Progress</span>
+                        </span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Software Engineer</td>
+                    <td>02</td>
+                    <td>2024-09-12</td>
+                    <td class="status status-pending">
+                        <span style="background-color: #FFFAEB; border-radius: 30%; width: max-content; height: max-content;">
+                            <span class="status-indicator"></span>
+                            <span class="status-pending-text status-label">Pending</span>
+                        </span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Team Lead</td>
+                    <td>01</td>
+                    <td>2024-09-12</td>
+                    <td class="status status-closed">
+                        <span style="background-color: #ECFDF3; border-radius: 30%;  width: max-content; height: max-content;">
+                            <span class="status-indicator"></span>
+                            <span class="status-closed-text status-label">Closed</span>
+                        </span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>IT Support</td>
+                    <td>01</td>
+                    <td>2024-09-12</td>
+                    <td class="status status-closed">
+                        <span style="background-color: #ECFDF3; border-radius: 30%;  width: max-content; height: max-content;">
+                            <span class="status-indicator"></span>
+                        <span class="status-closed-text status-label">Closed</span>
+                        </span>
+                        
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="insights-1">
+        <div class="insight-section-1">
+            <div class="insight-header-1">
+                <h3>Analytics</h3>
+                <img src="assets/Icon.svg"/>
+            </div>
+            <!-- Funnel chart has to appear -->
+        </div>
+        <div class="insight-section-1">
+            <div class="insight-header-1">
+                <h3>Hiring Velocity</h3>
+                <img src="assets/Icon.svg"/>
+            </div>
+            <!-- Funnel chart has to appear -->
+        </div>
+
+        <div class="container">
+                <div class="insight-header-1">
+                    <h3>Recruitment Status</h3>
+                    <img src="assets/Icon.svg"/>
+                </div>
+                <br>
+            <div class="card status-ar-callers">
+                <span class="job-title">AR Callers</span>
+                <span class="recruited-status">5/10 recruited</span>
+            </div>
+            <div class="card status-software-engineer">
+                <span class="job-title">Software Engineer</span>
+                <span class="recruited-status">0/2 recruited</span>
+            </div>
+            <div class="card status-team-lead-green">
+                <span class="job-title">Team Lead</span>
+                <span class="recruited-status">3/3 recruited</span>
+            </div>
+            <div class="card status-team-lead-green">
+                <span class="job-title">Team Lead</span>
+                <span class="recruited-status">3/3 recruited</span>
+            </div>
+            <div class="card status-team-lead-green">
+                <span class="job-title">Team Lead</span>
+                <span class="recruited-status">3/3 recruited</span>
+            </div>
+        </div>
+            
+        </div>
+</div>
